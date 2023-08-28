@@ -32,62 +32,41 @@
     <header>
 
     </header>
-    <main class="container w-4/5 mx-auto my-28">
-        <div class="flex flex-col items-center gap-7 mt-10">
-            <h2 class="text-3xl font-semibold black">Search your phone</h2>
-            <div class="form-control w-2/5">
-                <div class="input-group">
-                <input type="text" placeholder="Search your phone..." class="input input-bordered w-full bg-[#100F0F0D]" />
-                <button class="btn btn-ghost bg-primary text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                </button>
-                </div>
-            </div>
-        </div>
-        <section class="my-12">
-            <div id="phone-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="card bg-base-100 border rounded-md text-primary p-6">
-                    <figure class=" bg-[#0D6EFD0D] h-72 flex justify-center items-center p-8 mx-auto rounded-lg">
-                      <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204" alt="Shoes" class="rounded-xl w-4/5" />
-                    </figure>
-                    <div class="card-body items-center text-center pb-0">
-                      <h2 class="card-title font-bold mb-4">Iphone 13 Pro Max</h2>
-                      <p>There are many variations of passages of available, but the majority have suffered</p>
-                      <p class="font-bold text-xl">$<span>999</span></p>
-                      <div class="card-actions">
-                        <button class="btn btn-ghost text-white bg-primary hover:bg-blue-500 normal-case">Show Details</button>
-                      </div>
-                    </div>
-                </div>
-                <div class="card bg-base-100 border rounded-md text-primary p-6">
-                    <figure class=" bg-[#0D6EFD0D] h-72 flex justify-center items-center p-8 mx-auto rounded-lg">
-                      <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204" alt="Shoes" class="rounded-xl w-4/5" />
-                    </figure>
-                    <div class="card-body items-center text-center pb-0">
-                      <h2 class="card-title font-bold mb-4">Iphone 13 Pro Max</h2>
-                      <p>There are many variations of passages of available, but the majority have suffered</p>
-                      <p class="font-bold text-xl">$<span>999</span></p>
-                      <div class="card-actions">
-                        <button class="btn btn-ghost text-white bg-primary hover:bg-blue-500 normal-case">Show Details</button>
-                      </div>
-                    </div>
-                </div>
-                <div class="card bg-base-100 border rounded-md text-primary p-6">
-                    <figure class=" bg-[#0D6EFD0D] h-72 flex justify-center items-center p-8 mx-auto rounded-lg">
-                      <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204" alt="Shoes" class="rounded-xl w-4/5" />
-                    </figure>
-                    <div class="card-body items-center text-center pb-0">
-                      <h2 class="card-title font-bold mb-4">Iphone 13 Pro Max</h2>
-                      <p>There are many variations of passages of available, but the majority have suffered</p>
-                      <p class="font-bold text-xl">$<span>999</span></p>
-                      <div class="card-actions">
-                        <button class="btn btn-ghost text-white bg-primary hover:bg-blue-500 normal-case">Show Details</button>
-                      </div>
+    <main class="py-28">
+        <section class="w-4/5 mx-auto">
+            <!-- Search Box -->
+            <div class="flex flex-col items-center gap-7">
+                <h2 class="text-3xl font-semibold black">Search your phone</h2>
+                <div class="form-control w-full md:w-8/12">
+                    <div class="input-group">
+                        <input id="search-field" type="text" placeholder="Search your phone..." class="input input-bordered w-full bg-gray-50" />
+                        <button onclick="handleSearch()" class="btn btn-ghost bg-primary text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <button class="btn btn-ghost bg-primary text-white normal-case hover:bg-blue-500">Show All</button>
+
+            <!-- Search Results -->
+            <div id="phone-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6 my-12">
+                <!-- <div class="card bg-base-100 border rounded-md text-primary p-6">
+                    <figure class=" bg-[#0D6EFD0D] h-72 flex justify-center items-center p-8 mx-auto rounded-lg">
+                      <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204" alt="Shoes" class="rounded-xl w-4/5" />
+                    </figure>
+                    <div class="card-body items-center text-center pb-0">
+                        <h4 class="text-xs">Apple</h4>
+                        <h2 class="card-title font-bold mb-4">Iphone 13 Pro Max</h2>
+                        <p>There are many variations of passages of available, but the majority have suffered</p>
+                        <p class="font-bold text-xl">$<span>999</span></p>
+                        <div class="card-actions">
+                            <button class="btn btn-ghost text-white bg-primary hover:bg-blue-500 normal-case">Show Details</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- Show All Button -->
+            <div class="text-center">
+                <button id="show-all-btn" class="btn btn-ghost bg-primary text-white normal-case hover:bg-blue-500">Show All</button>
             </div>
         </section>
     </main>
@@ -95,6 +74,6 @@
 
     </footer>
     
-    <script src=""></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

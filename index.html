@@ -47,6 +47,16 @@
                 </div>
             </div>
 
+            <!-- Loading Spinner -->
+            <div id="loading-spinner" class="text-center py-32 hidden">
+                <span class="loading loading-spinner loading-lg bg-primary"></span>
+            </div>
+            <div id="invalid-search" class="flex flex-col items-center gap-4 mt-24 hidden">
+                <figure class="w-16">
+                    <img src="https://cdn-icons-png.flaticon.com/128/9393/9393626.png" alt="">
+                </figure>
+                <h1 class="text-3xl font-medium text-gray-500">Oops! No data found</h1>
+            </div>
             <!-- Search Results -->
             <div id="phone-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6 my-12">
                 <!-- <div class="card bg-base-100 border rounded-md text-primary p-6">
@@ -64,11 +74,18 @@
                     </div>
                 </div> -->
             </div>
+
             <!-- Show All Button -->
             <div class="text-center">
-                <button id="show-all-btn" class="btn btn-ghost bg-primary text-white normal-case hover:bg-blue-500">Show All</button>
+                <button onclick="handleShowAll()" id="show-all-btn" class="btn btn-ghost bg-primary text-white normal-case hover:bg-blue-500 hidden">Show All</button>
             </div>
         </section>
+
+        <!--? Show Detail Modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+
+        </dialog>
     </main>
     <footer>
 

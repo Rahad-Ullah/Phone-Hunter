@@ -100,6 +100,7 @@ const showPhoneDetails = (phone) => {
 
 // Handle Search
 const handleSearch = (isShowAll) =>{
+    console.log(isShowAll)
     toggleLoadingSpinner(true)
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
@@ -124,4 +125,4 @@ const handleShowAll = () => {
     handleSearch(true)
 }
 
-loadPhone('Apple');
+loadPhone('12', true);
